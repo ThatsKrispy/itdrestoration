@@ -26,7 +26,6 @@
       hamburger.setAttribute('aria-expanded', open);
     });
 
-    // Close on link click
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('open');
@@ -41,11 +40,13 @@
   document.querySelectorAll('.nav__link, .nav__mobile-link').forEach(link => {
     const href = link.getAttribute('href');
     if (!href) return;
-    const url = new URL(href, window.location.href);
-    if (url.pathname === currentPath ||
-        (currentPath !== '/' && url.pathname !== '/' && currentPath.startsWith(url.pathname))) {
-      link.classList.add('active');
-    }
+    try {
+      const url = new URL(href, window.location.href);
+      if (url.pathname === currentPath ||
+          (currentPath !== '/' && url.pathname !== '/' && currentPath.startsWith(url.pathname))) {
+        link.classList.add('active');
+      }
+    } catch (e) {}
   });
 
   /* ── FAQ Accordion ── */
@@ -90,7 +91,6 @@
       const data = Object.fromEntries(new FormData(contactForm));
 
       try {
-        // Netlify / Cloudflare forms or custom endpoint
         const res = await fetch(contactForm.action || '/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -150,41 +150,45 @@
     counters.forEach(c => countIO.observe(c));
   }
 
-  /* ── Scroll reveal ── */
-  const reveals = document.querySelectorAll('[data-reveal]');
-  if (reveals.length && 'IntersectionObserver' in window) {
-    const revealIO = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          revealIO.unobserve(entry.target);
-        }
+  /* ── Scroll reveal — FIXED ── 
+     Pure CSS-class approach: add .reveal-init to hide, .reveal-visible to show.
+     No inline style manipulation which breaks when class fires before DOMContentLoaded.
+  ── */
+  const revealEls = document.querySelectorAll('[data-reveal]');
+
+  if (revealEls.length) {
+    // Only run if user hasn't requested reduced motion
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReduced && 'IntersectionObserver' in window) {
+      // Initialize all elements as hidden
+      revealEls.forEach(el => {
+        el.classList.add('reveal-init');
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = 'opacity 500ms ease, transform 500ms ease';
-      revealIO.observe(el);
-    });
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.revealed').forEach(el => {
-        el.style.opacity = '1';
-        el.style.transform = 'none';
+
+      const revealIO = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('reveal-init');
+            entry.target.classList.add('reveal-visible');
+            revealIO.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.06,
+        rootMargin: '0px 0px -30px 0px'
       });
-    });
+
+      revealEls.forEach(el => revealIO.observe(el));
+    }
+    // If reduced motion or no IntersectionObserver: elements stay visible (no class added)
   }
 
-  // Apply reveal class
-  document.addEventListener('animationend', () => {}, { once: true });
-  document.querySelectorAll('.revealed').forEach(el => {
-    el.style.opacity = '1';
-    el.style.transform = 'none';
-  });
-
-  /* ── Phone number formatting ── */
+  /* ── Phone number accessibility ── */
   document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-    link.setAttribute('aria-label', 'Call us at ' + link.textContent.trim());
+    if (!link.getAttribute('aria-label')) {
+      link.setAttribute('aria-label', 'Call us at ' + link.textContent.trim());
+    }
   });
 
 })();
