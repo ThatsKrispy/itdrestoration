@@ -1457,6 +1457,19 @@ select.form-control {
 
 .footer__legal a:hover { color: rgba(255,255,255,.7); }
 
+.footer__legal-btn {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,.35);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color var(--transition);
+}
+
+.footer__legal-btn:hover { color: rgba(255,255,255,.7); }
+
 /* ── Utilities ── */
 .text-center { text-align: center; }
 .text-right  { text-align: right; }

@@ -120,24 +120,25 @@
       <h2>What Are Cookies?</h2>
       <p>Cookies are small text files placed on your device when you visit a website. They allow the website to recognize your browser, remember your preferences, and improve your experience.</p>
 
-      <h2 style="margin-top:2rem;">Cookies We Use</h2>
-      <p>The ITD Restoration website uses only essential cookies necessary for the basic functioning of the site. We do not use advertising cookies, tracking pixels, or third-party marketing cookies.</p>
+      <h2 style="margin-top:2rem;">Cookies &amp; Storage We Use</h2>
+      <p>The ITD Restoration website uses only what is necessary for the basic functioning of the site, plus optional categories that load <strong>only with your consent</strong>. We do not use advertising cookies, tracking pixels, or third-party marketing cookies.</p>
 
       <div style="background:var(--off-white);border-radius:var(--radius-md);padding:1.5rem;margin:1.5rem 0;">
         <table style="width:100%;border-collapse:collapse;font-size:.9rem;">
-          <thead><tr style="border-bottom:2px solid var(--light-gray);"><th style="text-align:left;padding:.5rem;color:var(--navy);">Cookie</th><th style="text-align:left;padding:.5rem;color:var(--navy);">Purpose</th><th style="text-align:left;padding:.5rem;color:var(--navy);">Duration</th></tr></thead>
+          <thead><tr style="border-bottom:2px solid var(--light-gray);"><th style="text-align:left;padding:.5rem;color:var(--navy);">Category</th><th style="text-align:left;padding:.5rem;color:var(--navy);">Purpose</th><th style="text-align:left;padding:.5rem;color:var(--navy);">Consent</th></tr></thead>
           <tbody>
-            <tr style="border-bottom:1px solid var(--light-gray);"><td style="padding:.6rem .5rem;">Session cookie</td><td style="padding:.6rem .5rem;">Maintains your session while browsing</td><td style="padding:.6rem .5rem;">Session</td></tr>
-            <tr><td style="padding:.6rem .5rem;">Preference cookie</td><td style="padding:.6rem .5rem;">Remembers any site preferences you set</td><td style="padding:.6rem .5rem;">1 year</td></tr>
+            <tr style="border-bottom:1px solid var(--light-gray);"><td style="padding:.6rem .5rem;">Necessary</td><td style="padding:.6rem .5rem;">Security, navigation, and remembering your cookie and accessibility preferences (stored locally in your browser)</td><td style="padding:.6rem .5rem;">Always on</td></tr>
+            <tr style="border-bottom:1px solid var(--light-gray);"><td style="padding:.6rem .5rem;">Maps &amp; embeds</td><td style="padding:.6rem .5rem;">Loads the Google Maps service-area map; Google may set cookies through this embed</td><td style="padding:.6rem .5rem;">Opt-in</td></tr>
+            <tr><td style="padding:.6rem .5rem;">Analytics</td><td style="padding:.6rem .5rem;">Anonymous usage statistics — <em>not currently active on this site</em>; your choice applies if analytics are ever added</td><td style="padding:.6rem .5rem;">Opt-in</td></tr>
           </tbody>
         </table>
       </div>
 
       <h2 style="margin-top:2rem;">Managing Cookies</h2>
-      <p>You can control and delete cookies through your browser settings. Disabling essential cookies may affect the functionality of this website. Most browsers allow you to refuse cookies or delete them — refer to your browser's help documentation for instructions.</p>
+      <p>When you first visit, a consent banner lets you accept all, reject optional, or customize categories individually. You can change your choices at any time using the <button type="button" data-open-cookie-preferences style="background:none;border:none;padding:0;color:var(--teal);text-decoration:underline;cursor:pointer;font:inherit;">Cookie preferences</button> control (also in the footer of every page). You can also control and delete cookies through your browser settings — disabling essential cookies may affect the functionality of this website.</p>
 
       <h2 style="margin-top:2rem;">Third-Party Services</h2>
-      <p>This website may embed a Google Maps iframe for displaying our service area. Google may set cookies through this embed in accordance with their own cookie policy. We recommend reviewing <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--teal);">Google's Privacy Policy</a> for details.</p>
+      <p>This website embeds a Google Maps iframe for displaying our service area. The map loads <strong>only after you allow the "Maps &amp; embeds" category</strong>; until then a placeholder is shown and no request is made to Google. Google may set cookies through this embed in accordance with their own cookie policy. We recommend reviewing <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--teal);">Google's Privacy Policy</a> for details.</p>
 
       <h2 style="margin-top:2rem;">Contact</h2>
       <p>If you have questions about our use of cookies, contact us at <a href="mailto:info@itdrestoration.com" style="color:var(--teal);">info@itdrestoration.com</a>.</p>
@@ -243,6 +244,7 @@
           <a href="/pages/privacy-policy.html">Privacy Policy</a>
           <a href="/pages/terms.html">Terms</a>
           <a href="/pages/cookie-policy.html">Cookie Policy</a>
+          <button type="button" class="footer__legal-btn" data-open-cookie-preferences>Cookie preferences</button>
         </nav>
       </div>
 
@@ -250,5 +252,7 @@
   </footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
   <script src="/js/main.js" defer></script>
+  <script src="/js/consent.js" defer></script>
+  <script src="/js/a11y.js" defer></script>
 </body>
 </html>
