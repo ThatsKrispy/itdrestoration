@@ -37,16 +37,25 @@
 
   /* ── Active nav link ── */
   const currentPath = window.location.pathname;
-  document.querySelectorAll('.nav__link, .nav__mobile-link').forEach(link => {
+  const linkMatches = (link) => {
     const href = link.getAttribute('href');
-    if (!href) return;
+    if (!href) return false;
     try {
       const url = new URL(href, window.location.href);
-      if (url.pathname === currentPath ||
-          (currentPath !== '/' && url.pathname !== '/' && currentPath.startsWith(url.pathname))) {
-        link.classList.add('active');
-      }
-    } catch (e) {}
+      return url.pathname === currentPath;
+    } catch (e) { return false; }
+  };
+
+  document.querySelectorAll('.nav__link, .nav__mobile-link, .nav__dropdown-link, .nav__mobile-sublink').forEach(link => {
+    if (linkMatches(link)) link.classList.add('active');
+  });
+
+  // Highlight the parent dropdown trigger when a child page is active
+  document.querySelectorAll('.nav__dropdown').forEach(dropdown => {
+    if (dropdown.querySelector('.nav__dropdown-link.active')) {
+      const trigger = dropdown.closest('.nav__item')?.querySelector('.nav__link');
+      if (trigger) trigger.classList.add('active');
+    }
   });
 
   /* ── FAQ Accordion ── */
@@ -74,7 +83,13 @@
     btn.setAttribute('aria-expanded', 'false');
   });
 
-  /* ── Contact form ── */
+  /* ── Contact form (Web3Forms) ──
+     Get a free access key at https://web3forms.com — register it to
+     info@itdrestoration.com so submissions land in the client's inbox.
+     Until a real key is set, the form falls back to opening the visitor's
+     email app pre-filled (no fake "message sent" confirmations). */
+  const W3F_ACCESS_KEY = 'REPLACE_WITH_WEB3FORMS_KEY';
+
   const contactForm = document.querySelector('#contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
@@ -82,26 +97,53 @@
       const submitBtn = contactForm.querySelector('[type="submit"]');
       const successMsg = document.querySelector('#form-success');
       const errorMsg   = document.querySelector('#form-error');
+      const mailtoMsg  = document.querySelector('#form-mailto');
+
+      const data = Object.fromEntries(new FormData(contactForm));
+      delete data.botcheck;
+
+      // Basic required-field check (form has novalidate)
+      const missing = ['first-name', 'last-name', 'email', 'phone'].filter(k => !String(data[k] || '').trim());
+      if (missing.length) {
+        contactForm.querySelector(`[name="${missing[0]}"]`)?.focus();
+        if (errorMsg) {
+          errorMsg.textContent = 'Please fill in your name, email, and phone number so we can reach you.';
+          errorMsg.style.display = 'block';
+        }
+        return;
+      }
+
+      [successMsg, errorMsg, mailtoMsg].forEach(el => { if (el) el.style.display = 'none'; });
+
+      // No key configured yet → open the visitor's email app pre-filled instead
+      if (W3F_ACCESS_KEY.indexOf('REPLACE') === 0) {
+        const body = Object.entries(data)
+          .filter(([k, v]) => v && ['subject', 'from_name'].indexOf(k) === -1)
+          .map(([k, v]) => `${k.replace(/-/g, ' ')}: ${v}`)
+          .join('\n');
+        window.location.href = 'mailto:info@itdrestoration.com'
+          + '?subject=' + encodeURIComponent('Estimate request from ' + data['first-name'] + ' ' + data['last-name'])
+          + '&body=' + encodeURIComponent(body);
+        if (mailtoMsg) mailtoMsg.style.display = 'block';
+        return;
+      }
 
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
-      if (successMsg) successMsg.style.display = 'none';
-      if (errorMsg)   errorMsg.style.display = 'none';
-
-      const data = Object.fromEntries(new FormData(contactForm));
 
       try {
-        const res = await fetch(contactForm.action || '/', {
+        const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(data).toString(),
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ access_key: W3F_ACCESS_KEY, ...data }),
         });
+        const result = await res.json();
 
-        if (res.ok) {
+        if (res.ok && result.success) {
           contactForm.reset();
-          if (successMsg) { successMsg.style.display = 'block'; }
+          if (successMsg) { successMsg.style.display = 'block'; successMsg.scrollIntoView({ block: 'nearest' }); }
         } else {
-          throw new Error('Server error');
+          throw new Error(result.message || 'Server error');
         }
       } catch {
         if (errorMsg) { errorMsg.style.display = 'block'; }
