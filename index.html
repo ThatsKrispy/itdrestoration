@@ -27,8 +27,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Roboto:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Roboto:wght@300;400;500;700&display=swap">
 
   <!-- Icons (Phosphor) -->
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
@@ -80,18 +80,6 @@
 </head>
 
 <body>
-
-  <!-- ── EMERGENCY BAR ── -->
-  <div class="emergency-bar" role="banner">
-    <div class="container">
-      <div class="emergency-bar__inner">
-        <p>🚨 Disaster struck? We respond 24/7 — </p>
-        <a href="tel:+18662199059">(866) 219-9059</a>
-        <p> — Call now for immediate help.</p>
-      </div>
-    </div>
-  </div>
-
   <!-- ── NAVIGATION ── -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container">
@@ -185,555 +173,296 @@
 
   <main id="main-content">
 
-    <!-- ── HERO ── -->
-    <section class="hero" aria-label="Hero">
-      <div class="hero__bg" aria-hidden="true">
-        <img src="/images/itd-restoration-fire-damage-structural-south-florida.webp"
-             alt="ITD Restoration fire damage job site — South Florida"
-             width="768" height="1024">
-      </div>
-
-      <!-- Quick-access service tabs -->
-      <div class="hero__services" aria-label="Quick service links">
-        <a href="/pages/water-damage.html" class="hero__service-tab">Water Damage</a>
-        <a href="/pages/fire-restoration.html" class="hero__service-tab">Fire Restoration</a>
-        <a href="/pages/mold-remediation.html" class="hero__service-tab">Mold Remediation</a>
-        <a href="/pages/flood-damage.html" class="hero__service-tab">Flood Damage</a>
-        <a href="/pages/roofing-services.html" class="hero__service-tab">Roofing</a>
-      </div>
-
+    <!-- ── HERO (live 1:1) ── -->
+    <section class="hero-live" aria-label="Hero">
       <div class="container">
-        <div class="hero__content" style="max-width: 640px;">
-          <div class="hero__badge">
-            <span class="hero__badge-dot" aria-hidden="true"></span>
-            Available 24/7 — South Florida
+        <span class="hero-live__eyebrow">ITD Restoration</span>
+        <h1>South Florida&#8217;s Premier<br><span class="swash">Restoration Experts</span></h1>
+        <p class="hero-live__sub">
+          Restoring your home and peace of mind is our mission at ITD Restoration. With decades of experience,
+          we specialize in water, fire, mold, and storm damage restoration. Our certified specialists ensure
+          meticulous attention to detail, reflecting our belief that true quality lies in the details.
+        </p>
+        <div class="hero-live__actions">
+          <a href="/pages/services.html" class="btn btn--outline">Our Services</a>
+        </div>
+        <div class="hero-live__ticks" aria-hidden="true"><span></span><span></span></div>
+      </div>
+    </section>
+
+    <!-- ── SERVICE CHIPS ── -->
+    <section class="section--sm section" aria-label="Quick service links">
+      <div class="container">
+        <div class="chip-row">
+          <a href="/pages/fire-restoration.html" class="chip">
+            <div class="chip__icon" aria-hidden="true"><i class="ph-fill ph-fire"></i></div>
+            <div class="chip__title">Fire Damage</div>
+            <div class="chip__sub">Restoration</div>
+          </a>
+          <a href="/pages/water-damage.html" class="chip">
+            <div class="chip__icon" aria-hidden="true"><i class="ph-fill ph-drop"></i></div>
+            <div class="chip__title">Water Damage</div>
+            <div class="chip__sub">Restoration</div>
+          </a>
+          <a href="/pages/mold-remediation.html" class="chip">
+            <div class="chip__icon" aria-hidden="true"><i class="ph-fill ph-biohazard"></i></div>
+            <div class="chip__title">Mold Damage</div>
+            <div class="chip__sub">Remediation</div>
+          </a>
+          <a href="/pages/flood-damage.html" class="chip">
+            <div class="chip__icon" aria-hidden="true"><i class="ph-fill ph-waves"></i></div>
+            <div class="chip__title">Flood Damage</div>
+            <div class="chip__sub">Restoration</div>
+          </a>
+          <a href="/pages/sewage-cleanup.html" class="chip">
+            <div class="chip__icon" aria-hidden="true"><i class="ph-fill ph-warning"></i></div>
+            <div class="chip__title">Sewage</div>
+            <div class="chip__sub">Cleanup</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WITH YOU FROM THE BEGINNING ── -->
+    <section class="section--sm section" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="panel-tint">
+          <div class="panel-tint__body">
+            <h2 id="why-heading">With You From The Beginning</h2>
+            <p>When disaster strikes, your property deserves the best care. Don&#8217;t settle for just any service
+               company because you&#8217;re in a rush. Your asset or home is too important to be left to chance or
+               subpar workmanship.</p>
+            <div class="panel-bullet">
+              <div class="panel-bullet__icon" aria-hidden="true"><i class="ph-fill ph-sparkle"></i></div>
+              <div>
+                <h4>Concierge Service</h4>
+                <p>We work closely with insurers and adjusters to deliver unmatched quality and proven expertise
+                   in both commercial and residential repairs. Our extensive network of certified professionals
+                   covers every aspect of home restoration, ensuring that your property is in capable hands.</p>
+              </div>
+            </div>
+            <div class="panel-bullet">
+              <div class="panel-bullet__icon" aria-hidden="true"><i class="ph-fill ph-magnifying-glass"></i></div>
+              <div>
+                <h4>Attention to Detail</h4>
+                <p>From the initial assessment to the final touches, our dedicated team provides complete guidance
+                   and personal attention throughout the restoration process. We handle everything with precision,
+                   ensuring your home is restored quickly, within budget, and to its pre-loss condition.</p>
+              </div>
+            </div>
           </div>
-
-          <h1>
-            South Florida's Premier
-            <span class="accent">Restoration Experts</span>
-          </h1>
-
-          <p class="hero__sub">
-            When disaster strikes, you need a team that treats your home like their own.
-            ITD — <em>In The Details</em> — delivers meticulous water, fire, mold,
-            and storm restoration with certified specialists and 24/7 rapid response.
-          </p>
-
-          <div class="hero__actions">
-            <a href="tel:+18662199059" class="btn btn--gold btn--lg" aria-label="Call now for emergency service">
-              <i class="ph ph-phone" aria-hidden="true"></i>
-              Call Now: (866) 219-9059
-            </a>
-            <a href="/pages/contact.html" class="btn btn--outline btn--lg">
-              Free Estimate
-            </a>
-          </div>
-
-          <div class="hero__trust" role="list">
-            <div class="hero__trust-item" role="listitem">
-              <i class="ph ph-shield-check hero__trust-icon" aria-hidden="true"></i>
-              Licensed &amp; Certified
-            </div>
-            <div class="hero__trust-item" role="listitem">
-              <i class="ph ph-clock hero__trust-icon" aria-hidden="true"></i>
-              24/7 Emergency Response
-            </div>
-            <div class="hero__trust-item" role="listitem">
-              <i class="ph ph-handshake hero__trust-icon" aria-hidden="true"></i>
-              Insurance Approved
-            </div>
-            <div class="hero__trust-item" role="listitem">
-              <i class="ph ph-medal hero__trust-icon" aria-hidden="true"></i>
-              LIC: #CBC1268332
+          <div class="panel-tint__media">
+            <img src="/images/itd-restoration-fire-damage-structural-south-florida.webp"
+                 alt="Fire-damaged structure under restoration by ITD — South Florida" loading="lazy"
+                 width="768" height="1024">
+            <div class="badge-years">
+              <strong><span data-count="18">0</span>+</strong>
+              <span>Years of Experience</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── STATS ── -->
-    <section class="stats-strip" aria-label="Company highlights">
+    <!-- ── PROGRAMS BAND ── -->
+    <section class="band-cards" aria-label="ITD programs">
+      <div class="band-cards__bg" aria-hidden="true">
+        <img src="/images/itd-restoration-certified-technicians-at-work.webp" alt="" loading="lazy" width="768" height="1024">
+      </div>
       <div class="container">
-        <div class="stats-strip__grid">
-          <div class="stat-item">
-            <div class="stat-item__number">
-              <span data-count="18">0</span><span>+</span>
-            </div>
-            <div class="stat-item__label">Years of Experience</div>
+        <div class="grid-3">
+          <div class="band-card" data-reveal>
+            <div class="band-card__icon" aria-hidden="true"><i class="ph-fill ph-graduation-cap"></i></div>
+            <h3><a href="/pages/academy.html">ITD Academy</a></h3>
+            <p>ITD Academy offers workshops and CEUs for CAMs, commercial managers, maintenance teams,
+               and insurance professionals, enhancing industry skills and knowledge.</p>
           </div>
-          <div class="stat-item">
-            <div class="stat-item__number">
-              <span data-count="24">0</span><span>/7</span>
-            </div>
-            <div class="stat-item__label">Emergency Response</div>
+          <div class="band-card" data-reveal>
+            <div class="band-card__icon" aria-hidden="true"><i class="ph-fill ph-clock"></i></div>
+            <h3>Emergency Response and Support</h3>
+            <p>Available 24/7, our rapid response team addresses emergencies promptly, minimizing damage
+               and beginning the restoration process immediately.</p>
           </div>
-          <div class="stat-item">
-            <div class="stat-item__number">
-              <span data-count="4">0</span>
-            </div>
-            <div class="stat-item__label">Counties Served</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-item__number">
-              <span data-count="100">0</span><span>%</span>
-            </div>
-            <div class="stat-item__label">Insurance Coordination</div>
+          <div class="band-card" data-reveal>
+            <div class="band-card__icon" aria-hidden="true"><i class="ph-fill ph-shield-check"></i></div>
+            <h3><a href="/pages/prep.html">Priority Response Emergency Plan</a></h3>
+            <p>Our P.R.E.P. program provides customized emergency response plans and priority service access
+               during disasters, ensuring swift recovery and minimizing downtime.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── TRUST BAR ── -->
-    <section class="trust-bar" aria-label="Certifications and credentials">
-      <div class="container">
-        <div class="trust-bar__inner">
-          <div class="trust-bar__item">
-            <i class="ph ph-certificate trust-bar__item-icon" aria-hidden="true"></i>
-            IICRC Certified
-          </div>
-          <div class="trust-bar__item">
-            <i class="ph ph-shield-check trust-bar__item-icon" aria-hidden="true"></i>
-            LIC: #CBC1268332
-          </div>
-          <div class="trust-bar__item">
-            <i class="ph ph-tree trust-bar__item-icon" aria-hidden="true"></i>
-            Eco-Friendly Methods
-          </div>
-          <div class="trust-bar__item">
-            <i class="ph ph-file-text trust-bar__item-icon" aria-hidden="true"></i>
-            Insurance Claims Assistance
-          </div>
-          <div class="trust-bar__item">
-            <i class="ph ph-map-pin trust-bar__item-icon" aria-hidden="true"></i>
-            South Florida Local
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── SERVICES ── -->
+    <!-- ── OUR SERVICES ── -->
     <section class="section" id="services" aria-labelledby="services-heading">
       <div class="container">
-        <div class="text-center mb-lg">
-          <span class="eyebrow">What We Do</span>
-          <h2 id="services-heading">Complete Restoration Services</h2>
-          <p class="lead" style="max-width:600px; margin-inline: auto; margin-top: 0.75rem;">
-            From the first call to the final walkthrough, we handle every aspect of your recovery
-            so you can focus on what matters most.
-          </p>
-        </div>
+        <h2 id="services-heading" class="eyebrow-rule" style="margin-bottom: 2.5rem;">Our Services</h2>
 
-        <div class="grid-4">
-
-          <article class="service-card" data-reveal>
-            <div class="service-card__photo">
-              <img src="/images/itd-restoration-water-damage-burst-pipe-south-florida.webp"
-                   alt="Burst water pipes causing water damage — South Florida restoration"
-                   loading="lazy" width="768" height="512">
-            </div>
-            <div class="service-card__body">
-              <h3>Water Damage</h3>
-              <p>Immediate extraction, industrial drying, moisture mapping, and mold prevention from burst pipes, floods, or appliance failures.</p>
-              <a href="/pages/water-damage.html" class="service-card__link" aria-label="Water damage restoration services">
-                Learn More <i class="ph ph-arrow-right" aria-hidden="true"></i>
-              </a>
+        <div class="svc-grid">
+          <article class="svc-card" data-reveal>
+            <div class="svc-card__img"><img src="/images/itd-restoration-water-damage-burst-pipe-south-florida.webp" alt="Water damage restoration — burst pipe South Florida" loading="lazy" width="768" height="512"></div>
+            <div class="svc-card__body">
+              <div class="svc-card__icon" aria-hidden="true"><i class="ph-fill ph-drop"></i></div>
+              <h3>Water Damage Restoration</h3>
+              <p>Immediate water extraction, thorough drying, and advanced mold prevention techniques.</p>
+              <a href="/pages/water-damage.html" class="btn">Service Details</a>
             </div>
           </article>
-
-          <article class="service-card" data-reveal>
-            <div class="service-card__photo">
-              <img src="/images/itd-restoration-fire-damage-structural-south-florida.webp"
-                   alt="Fire damage restoration project — structural damage and soot removal"
-                   loading="lazy" width="768" height="1024">
-            </div>
-            <div class="service-card__body">
-              <h3>Fire Restoration</h3>
-              <p>Board-up, smoke &amp; soot removal, odor elimination, structural repair, and full reconstruction after fire damage.</p>
-              <a href="/pages/fire-restoration.html" class="service-card__link" aria-label="Fire damage restoration services">
-                Learn More <i class="ph ph-arrow-right" aria-hidden="true"></i>
-              </a>
+          <article class="svc-card" data-reveal>
+            <div class="svc-card__img"><img src="/images/itd-restoration-fire-damage-structural-south-florida.webp" alt="Fire damage restoration — structural repairs" loading="lazy" width="768" height="1024"></div>
+            <div class="svc-card__body">
+              <div class="svc-card__icon" aria-hidden="true"><i class="ph-fill ph-fire"></i></div>
+              <h3>Fire Damage Restoration</h3>
+              <p>Cleaning, sanitizing, odor removal, and structural repairs.</p>
+              <a href="/pages/fire-restoration.html" class="btn">Service Details</a>
             </div>
           </article>
-
-          <article class="service-card" data-reveal>
-            <div class="service-card__photo">
-              <img src="/images/itd-restoration-mold-remediation-certified-south-florida.webp"
-                   alt="Mold remediation job — certified mold removal South Florida"
-                   loading="lazy" width="768" height="1024">
-            </div>
-            <div class="service-card__body">
+          <article class="svc-card" data-reveal>
+            <div class="svc-card__img"><img src="/images/itd-restoration-mold-remediation-certified-south-florida.webp" alt="Mold remediation — certified removal South Florida" loading="lazy" width="768" height="1024"></div>
+            <div class="svc-card__body">
+              <div class="svc-card__icon" aria-hidden="true"><i class="ph-fill ph-biohazard"></i></div>
               <h3>Mold Remediation</h3>
-              <p>Certified inspection, containment, safe removal, air quality restoration, and prevention measures to stop mold from returning.</p>
-              <a href="/pages/mold-remediation.html" class="service-card__link" aria-label="Mold remediation services">
-                Learn More <i class="ph ph-arrow-right" aria-hidden="true"></i>
-              </a>
+              <p>Inspection, containment, removal, and cleaning to eliminate mold and prevent recurrence.</p>
+              <a href="/pages/mold-remediation.html" class="btn">Service Details</a>
             </div>
           </article>
-
-          <article class="service-card" data-reveal>
-            <div class="service-card__photo">
-              <img src="/images/itd-restoration-flood-damage-water-extraction-south-florida.webp"
-                   alt="Flood damage restoration — water extraction and drying"
-                   loading="lazy" width="768" height="1024">
-            </div>
-            <div class="service-card__body">
-              <h3>Storm &amp; Flood Damage</h3>
-              <p>Rapid response for hurricane, flood, and storm damage — debris removal, tarping, water extraction, and full property restoration.</p>
-              <a href="/pages/flood-damage.html" class="service-card__link" aria-label="Flood damage restoration services">
-                Learn More <i class="ph ph-arrow-right" aria-hidden="true"></i>
-              </a>
+          <article class="svc-card" data-reveal>
+            <div class="svc-card__img"><img src="/images/itd-restoration-storm-damage-restoration-south-florida.webp" alt="Storm damage restoration project — South Florida" loading="lazy" width="768" height="1024"></div>
+            <div class="svc-card__body">
+              <div class="svc-card__icon" aria-hidden="true"><i class="ph-fill ph-cloud-lightning"></i></div>
+              <h3>Storm Damage Restoration</h3>
+              <p>Rapid response, damage assessment, cleanup, and repairs.</p>
+              <a href="/pages/flood-damage.html" class="btn">Service Details</a>
             </div>
           </article>
-
-          <article class="service-card" data-reveal>
-            <div class="service-card__photo">
-              <img src="/images/itd-restoration-smoke-fire-kitchen-damage-south-florida.webp"
-                   alt="Smoke and fire damaged kitchen — smoke restoration South Florida"
-                   loading="lazy" width="768" height="577">
-            </div>
-            <div class="service-card__body">
-              <h3>Smoke Damage</h3>
-              <p>Specialized cleaning of smoke-damaged surfaces, HVAC decontamination, odor neutralization, and content restoration.</p>
-              <a href="/pages/smoke-damage.html" class="service-card__link" aria-label="Smoke damage restoration services">
-                Learn More <i class="ph ph-arrow-right" aria-hidden="true"></i>
-              </a>
+          <article class="svc-card" data-reveal>
+            <div class="svc-card__img"><img src="/images/itd-restoration-smoke-fire-kitchen-damage-south-florida.webp" alt="Smoke damage restoration — kitchen fire South Florida" loading="lazy" width="768" height="577"></div>
+            <div class="svc-card__body">
+              <div class="svc-card__icon" aria-hidden="true"><i class="ph-fill ph-wind"></i></div>
+              <h3>Smoke Damage Restoration</h3>
+              <p>Remove smoke and soot, restore air quality.</p>
+              <a href="/pages/smoke-damage.html" class="btn">Service Details</a>
             </div>
           </article>
-
-          <article class="service-card" data-reveal>
-            <div class="service-card__photo">
-              <img src="/images/itd-restoration-sewage-cleanup-professional-south-florida.webp"
-                   alt="Professional sewage cleanup and sanitization"
-                   loading="lazy" width="768" height="1024">
-            </div>
-            <div class="service-card__body">
+          <article class="svc-card" data-reveal>
+            <div class="svc-card__img"><img src="/images/itd-restoration-flood-damage-water-extraction-south-florida.webp" alt="Sewage cleanup — professional containment" loading="lazy" width="768" height="1024"></div>
+            <div class="svc-card__body">
+              <div class="svc-card__icon" aria-hidden="true"><i class="ph-fill ph-pipe"></i></div>
               <h3>Sewage Cleanup</h3>
-              <p>Safe containment, extraction, deep sanitization, and disinfection of sewage-affected areas to restore safety and health standards.</p>
-              <a href="/pages/sewage-cleanup.html" class="service-card__link" aria-label="Sewage cleanup services">
-                Learn More <i class="ph ph-arrow-right" aria-hidden="true"></i>
-              </a>
+              <p>Professional containment, water removal, cleaning, and sanitization.</p>
+              <a href="/pages/sewage-cleanup.html" class="btn">Service Details</a>
             </div>
           </article>
-
-          <article class="service-card" data-reveal>
-            <div class="service-card__photo">
-              <img src="/images/itd-restoration-biohazard-mold-remediation-south-florida.webp"
-                   alt="Professional biohazard remediation and cleanup"
-                   loading="lazy" width="768" height="1024">
-            </div>
-            <div class="service-card__body">
-              <h3>Biohazard Cleanup</h3>
-              <p>Professional remediation of biohazardous materials following all safety regulations, with full decontamination and disposal.</p>
-              <a href="/pages/biohazard-cleanup.html" class="service-card__link" aria-label="Biohazard cleanup services">
-                Learn More <i class="ph ph-arrow-right" aria-hidden="true"></i>
-              </a>
+          <article class="svc-card" data-reveal>
+            <div class="svc-card__img"><img src="/images/itd-restoration-water-damage-team-job-site.webp" alt="Flood damage restoration — water extraction" loading="lazy" width="2048" height="1365"></div>
+            <div class="svc-card__body">
+              <div class="svc-card__icon" aria-hidden="true"><i class="ph-fill ph-waves"></i></div>
+              <h3>Flood Damage Restoration</h3>
+              <p>Extract water, dry property, prevent mold growth.</p>
+              <a href="/pages/flood-damage.html" class="btn">Service Details</a>
             </div>
           </article>
-
-          <article class="service-card" data-reveal>
-            <div class="service-card__photo">
-              <img src="/images/itd-restoration-roof-damage-leaking-storm-south-florida.webp"
-                   alt="Leaking roof and storm damage — emergency tarping South Florida"
-                   loading="lazy" width="768" height="605">
-            </div>
-            <div class="service-card__body">
+          <article class="svc-card" data-reveal>
+            <div class="svc-card__img"><img src="/images/itd-restoration-roof-damage-leaking-storm-south-florida.webp" alt="Roofing services — tarp installation and repairs" loading="lazy" width="768" height="605"></div>
+            <div class="svc-card__body">
+              <div class="svc-card__icon" aria-hidden="true"><i class="ph-fill ph-house-line"></i></div>
               <h3>Roofing Services</h3>
-              <p>Emergency tarping, repairs, and full roof replacements from licensed contractors to protect your property from further damage.</p>
-              <a href="/pages/roofing-services.html" class="service-card__link" aria-label="Roofing services">
-                Learn More <i class="ph ph-arrow-right" aria-hidden="true"></i>
-              </a>
+              <p>Tarp installation, repairs, and replacements.</p>
+              <a href="/pages/roofing-services.html" class="btn">Service Details</a>
             </div>
           </article>
-
         </div>
       </div>
     </section>
 
-        <!-- ── WHY ITD ── -->
-    <section class="section section--mist" aria-labelledby="why-heading">
+    <!-- ── LICENSED & CERTIFIED ── -->
+    <section class="band-cert" aria-label="Licenses and certifications">
+      <div class="band-cert__bg" aria-hidden="true">
+        <img src="/images/itd-restoration-roofing-repair-south-florida-21.webp" alt="" loading="lazy" width="768" height="576">
+      </div>
       <div class="container">
-        <div class="grid-2" style="align-items: center; gap: 4rem;">
-
+        <div class="band-cert__inner">
           <div>
-            <span class="eyebrow">Why Choose ITD</span>
-            <h2 id="why-heading">With You From the Very Beginning</h2>
-            <p class="lead" style="margin-top: 0.75rem; margin-bottom: 1.5rem;">
-              Our name says it all — <strong>In The Details</strong>. We don't rush, we don't cut corners,
-              and we don't hand you off to a third party. Every job gets the same meticulous care we'd give our own home.
-            </p>
+            <h2>Licensed &amp; Certified</h2>
+            <div class="band-cert__lic">LIC: #CBC1268332</div>
+          </div>
+          <div class="band-cert__badges">
+            <img src="/images/itd-restoration-certification-badge-2.webp" alt="EPA Lead-Safe Certified Firm" loading="lazy" width="64" height="64">
+            <img src="/images/iicrc-certified-restoration-badge.webp" alt="IICRC Certified Firm" loading="lazy" width="64" height="64">
+            <img src="/images/itd-restoration-certification-badge-3.webp" alt="Restoration Industry Association member" loading="lazy" width="64" height="64">
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="process-steps">
-              <div class="process-step">
-                <div class="process-step__num" aria-hidden="true">1</div>
-                <div class="process-step__content">
-                  <h4>Rapid Assessment</h4>
-                  <p>We arrive fast, assess the full scope of damage, and walk you through every finding before starting work.</p>
+    <!-- ── GOOGLE REVIEWS ── -->
+    <section class="section--sm section" aria-labelledby="reviews-heading">
+      <div class="container">
+        <div class="greviews">
+          <div class="greviews__summary">
+            <img src="/images/itd-restoration-logo-icon.webp" alt="ITD Restoration logo" width="56" height="56">
+            <h3 id="reviews-heading">ITD Restoration Deerfield Beach</h3>
+            <div class="gstars" aria-label="Rated 4.5 out of 5 stars on Google">★★★★½</div>
+            <div class="greviews__count">17 Google reviews</div>
+            <a class="greviews__write" href="https://www.google.com/maps/search/ITD+Restoration+Deerfield+Beach" target="_blank" rel="noopener noreferrer">Write a review</a>
+          </div>
+          <div class="greviews__cards">
+            <article class="greview">
+              <svg class="greview__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.1A6.6 6.6 0 0 1 5.49 12c0-.73.13-1.44.35-2.1V7.06H2.18A11 11 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.1 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+              <div class="greview__head">
+                <div class="greview__avatar" style="background:#E8710A;">N</div>
+                <div>
+                  <div class="greview__name">Nina McKenna <i class="ph-fill ph-seal-check greview__verified" aria-label="Verified Google review"></i></div>
+                  <div class="greview__date">Posted on Google</div>
                 </div>
               </div>
-              <div class="process-step">
-                <div class="process-step__num" aria-hidden="true">2</div>
-                <div class="process-step__content">
-                  <h4>Insurance Coordination</h4>
-                  <p>We work directly with your insurer and adjuster — handling documentation, estimates, and communication so you don't have to.</p>
+              <div class="gstars" style="margin-top:.6rem;" aria-label="5 stars">★★★★★</div>
+              <p>I had a leak from upstairs bathroom to downstairs kitchen, they found mold in walls; so they quickly
+                 sent out Domenico Lauria to tear down walls, cabinets vanity, toilet... he was professional, informative,
+                 hard working and left no mess behind!! Super happy with how quick and efficient the work was done!</p>
+            </article>
+            <article class="greview">
+              <svg class="greview__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.1A6.6 6.6 0 0 1 5.49 12c0-.73.13-1.44.35-2.1V7.06H2.18A11 11 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.1 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+              <div class="greview__head">
+                <div class="greview__avatar" style="background:#7B1FA2;">M</div>
+                <div>
+                  <div class="greview__name">Miles Sampson <i class="ph-fill ph-seal-check greview__verified" aria-label="Verified Google review"></i></div>
+                  <div class="greview__date">Posted on Google</div>
                 </div>
               </div>
-              <div class="process-step">
-                <div class="process-step__num" aria-hidden="true">3</div>
-                <div class="process-step__content">
-                  <h4>Certified Restoration</h4>
-                  <p>Our certified specialists execute the full restoration plan with daily updates, quality checks, and zero shortcuts.</p>
+              <div class="gstars" style="margin-top:.6rem;" aria-label="5 stars">★★★★★</div>
+              <p>Ricardo was the crew chief and was professional throughout the entire experience. There was a little
+                 more mold than expected, and I appreciated Ricardo&#8217;s thoroughness in examining our kitchen area to
+                 ensure we could fully eradicate the mold. &#8230; Overall, I would definitively recommend ITD for remediation.</p>
+            </article>
+            <article class="greview">
+              <svg class="greview__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.1A6.6 6.6 0 0 1 5.49 12c0-.73.13-1.44.35-2.1V7.06H2.18A11 11 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.1 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+              <div class="greview__head">
+                <div class="greview__avatar" style="background:#00796B;">J</div>
+                <div>
+                  <div class="greview__name">jordan mcsorley <i class="ph-fill ph-seal-check greview__verified" aria-label="Verified Google review"></i></div>
+                  <div class="greview__date">Posted on Google</div>
                 </div>
               </div>
-              <div class="process-step">
-                <div class="process-step__num" aria-hidden="true">4</div>
-                <div class="process-step__content">
-                  <h4>Final Walkthrough</h4>
-                  <p>We don't call a job done until you do. Final inspection, sign-off, and follow-up — always.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="gallery">
-              <div class="gallery__item">
-                <img src="/images/itd-restoration-water-damage-team-job-site.webp"
-                     alt="ITD Restoration team on water damage job — South Florida"
-                     loading="lazy" width="2048" height="1365">
-              </div>
-              <div class="gallery__item">
-                <img src="/images/itd-restoration-certified-technicians-at-work.webp"
-                     alt="ITD Restoration certified technicians at work"
-                     loading="lazy" width="768" height="1024">
-              </div>
-              <div class="gallery__item">
-                <img src="/images/itd-restoration-storm-damage-restoration-south-florida.webp"
-                     alt="Storm damage restoration project South Florida"
-                     loading="lazy" width="768" height="1024">
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ── PHOTO GALLERY ── -->
-    <section class="section section--dark" aria-labelledby="gallery-heading">
-      <div class="container">
-        <div class="text-center mb-lg">
-          <span class="eyebrow">Our Work</span>
-          <h2 id="gallery-heading" style="color: var(--white);">Restoration Done Right</h2>
-          <p style="color: rgba(255,255,255,.65); max-width:520px; margin-inline: auto; margin-top: 0.75rem;">
-            Real jobs. Real South Florida properties. Restored to better than before.
-          </p>
-        </div>
-
-        <div class="gallery gallery--4col">
-          <div class="gallery__item">
-            <img src="/images/itd-restoration-water-damage-burst-pipe-south-florida.webp"
-                 alt="Water damage — burst pipes, sponge and bucket in flooded room"
-                 loading="lazy" width="768" height="512">
-          </div>
-          <div class="gallery__item">
-            <img src="/images/itd-restoration-fire-damage-structural-south-florida.webp"
-                 alt="Fire damage restoration — structural damage job site"
-                 loading="lazy" width="768" height="1024">
-          </div>
-          <div class="gallery__item">
-            <img src="/images/itd-restoration-mold-remediation-certified-south-florida.webp"
-                 alt="Mold remediation — certified mold removal South Florida"
-                 loading="lazy" width="768" height="1024">
-          </div>
-          <div class="gallery__item">
-            <img src="/images/itd-restoration-roof-damage-leaking-storm-south-florida.webp"
-                 alt="Leaking roof — storm damage emergency tarping"
-                 loading="lazy" width="768" height="605">
-          </div>
-          <div class="gallery__item">
-            <img src="/images/itd-restoration-smoke-fire-kitchen-damage-south-florida.webp"
-                 alt="Kitchen fire and smoke damage restoration"
-                 loading="lazy" width="768" height="577">
-          </div>
-          <div class="gallery__item">
-            <img src="/images/itd-restoration-flood-damage-water-extraction-south-florida.webp"
-                 alt="Flood damage restoration — standing water removal"
-                 loading="lazy" width="768" height="1024">
-          </div>
-          <div class="gallery__item">
-            <img src="/images/itd-restoration-storm-damage-restoration-south-florida.webp"
-                 alt="Storm damage restoration project South Florida"
-                 loading="lazy" width="768" height="1024">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── TESTIMONIALS ── -->
-    <section class="section" aria-labelledby="reviews-heading">
-      <div class="container">
-        <div class="text-center mb-lg">
-          <span class="eyebrow">Client Reviews</span>
-          <h2 id="reviews-heading">Trusted by South Florida Homeowners</h2>
-          <p style="margin-top: 0.75rem; color: var(--text-mid);">Real reviews from our <a href="https://www.google.com/maps/search/ITD+Restoration+Deerfield+Beach" target="_blank" rel="noopener">Google Business profile</a>.</p>
-        </div>
-
-        <div class="grid-3">
-
-          <article class="testimonial-card" data-reveal>
-            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p>"I had a leak from upstairs bathroom to downstairs kitchen, they found mold in walls; so they quickly sent out Domenico Lauria to tear down walls, cabinets vanity, toilet... he was professional, informative, hard working and left no mess behind!! Super happy with how quick and efficient the work was done!"</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" aria-hidden="true">NM</div>
-              <div>
-                <div class="testimonial-card__name">Nina McKenna</div>
-                <div class="testimonial-card__meta">Posted on Google</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="testimonial-card" data-reveal>
-            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p>"Ricardo was the crew chief and was professional throughout the entire experience. There was a little more mold than expected, and I appreciated Ricardo's thoroughness in examining our kitchen area to ensure we could fully eradicate the mold. … Overall, I would definitively recommend ITD for remediation."</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" aria-hidden="true">MS</div>
-              <div>
-                <div class="testimonial-card__name">Miles Sampson</div>
-                <div class="testimonial-card__meta">Posted on Google</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="testimonial-card" data-reveal>
-            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p>"Carlos is very talented. He got his work done in no time at all. He was also Extremely pleasant, friendly and professional. I'd give him 6 stars if that was an option. 🤘🏻"</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" aria-hidden="true">JM</div>
-              <div>
-                <div class="testimonial-card__name">jordan mcsorley</div>
-                <div class="testimonial-card__meta">Posted on Google</div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ── ITD PROGRAMS ── -->
-    <section class="section section--mist" aria-labelledby="programs-heading">
-      <div class="container">
-        <div class="text-center mb-lg">
-          <span class="eyebrow">More From ITD</span>
-          <h2 id="programs-heading">Beyond Restoration</h2>
-        </div>
-
-        <div class="grid-2" style="gap: 2rem;">
-
-          <div style="background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-card); border-left: 4px solid var(--teal);" data-reveal>
-            <div style="color: var(--teal); font-size: 2rem; margin-bottom: 1rem;" aria-hidden="true">
-              <i class="ph ph-lightning"></i>
-            </div>
-            <h3 style="margin-bottom: 0.5rem;">Priority Response Emergency Plan</h3>
-            <p>Get a customized emergency response plan for your property before disaster strikes. P.R.E.P. clients get priority access, pre-documented property information, and faster insurance processing when they need it most.</p>
-            <a href="/pages/prep.html" class="btn btn--outline-dark mt-md" aria-label="Learn about the P.R.E.P. program">
-              Learn About P.R.E.P. <i class="ph ph-arrow-right" aria-hidden="true"></i>
-            </a>
-          </div>
-
-          <div style="background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-card); border-left: 4px solid var(--gold);" data-reveal>
-            <div style="color: var(--gold); font-size: 2rem; margin-bottom: 1rem;" aria-hidden="true">
-              <i class="ph ph-graduation-cap"></i>
-            </div>
-            <h3 style="margin-bottom: 0.5rem;">ITD Academy</h3>
-            <p>CEUs and workshops for Community Association Managers, commercial property managers, maintenance teams, and insurance professionals. Stay current on best practices, regulations, and emergency preparedness.</p>
-            <a href="/pages/academy.html" class="btn btn--outline-dark mt-md" aria-label="Learn about ITD Academy">
-              Explore Academy <i class="ph ph-arrow-right" aria-hidden="true"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ── SERVICE AREA ── -->
-    <section class="section" aria-labelledby="area-heading">
-      <div class="container">
-        <div class="grid-2" style="align-items: center; gap: 4rem;">
-          <div>
-            <span class="eyebrow">Service Area</span>
-            <h2 id="area-heading">Serving All of South Florida</h2>
-            <p style="margin-top: 0.75rem; margin-bottom: 1.5rem;">
-              With teams positioned across the region, we reach you fast — wherever you are in South Florida.
-            </p>
-            <div class="grid-2" style="gap: 0.5rem;">
-              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--slate);">
-                <i class="ph ph-map-pin" style="color: var(--teal);" aria-hidden="true"></i> Miami-Dade County
-              </div>
-              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--slate);">
-                <i class="ph ph-map-pin" style="color: var(--teal);" aria-hidden="true"></i> Broward County
-              </div>
-              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--slate);">
-                <i class="ph ph-map-pin" style="color: var(--teal);" aria-hidden="true"></i> Palm Beach County
-              </div>
-              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--slate);">
-                <i class="ph ph-map-pin" style="color: var(--teal);" aria-hidden="true"></i> Martin County
-              </div>
-              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--slate);">
-                <i class="ph ph-map-pin" style="color: var(--teal);" aria-hidden="true"></i> Boynton Beach
-              </div>
-              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--slate);">
-                <i class="ph ph-map-pin" style="color: var(--teal);" aria-hidden="true"></i> Deerfield Beach
-              </div>
-              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--slate);">
-                <i class="ph ph-map-pin" style="color: var(--teal);" aria-hidden="true"></i> West Palm Beach
-              </div>
-              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--slate);">
-                <i class="ph ph-map-pin" style="color: var(--teal);" aria-hidden="true"></i> Fort Lauderdale
-              </div>
-            </div>
-            <a href="/pages/contact.html" class="btn btn--primary mt-lg">
-              Check Your Area <i class="ph ph-arrow-right" aria-hidden="true"></i>
-            </a>
-          </div>
-
-          <div style="background: var(--mist); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3;">
-            <iframe
-              data-consent-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d905553.8082295946!2d-80.86660374648437!3d26.12367295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ab2a7d2c8487%3A0x5c7cdd7b1af6e58c!2sSouth%20Florida!5e0!3m2!1sen!2sus!4v1709000000000"
-              width="100%" height="100%"
-              style="border:0; display: block;"
-              allowfullscreen=""
-              loading="lazy"
-              title="ITD Restoration South Florida service area map"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── CTA ── -->
-    <section class="section section--lg" aria-label="Call to action">
-      <div class="container">
-        <div class="cta-block">
-          <h2>Ready to Restore Your Property?</h2>
-          <p>Call us now for emergency response, or request a free estimate for planned restoration work.<br>
-          We're available 24 hours a day, 7 days a week.</p>
-          <div class="cta-block__actions">
-            <a href="tel:+18662199059" class="btn btn--gold btn--lg" aria-label="Call ITD Restoration now">
-              <i class="ph ph-phone" aria-hidden="true"></i>
-              (866) 219-9059
-            </a>
-            <a href="/pages/contact.html" class="btn btn--outline btn--lg">
-              Request Free Estimate
-            </a>
+              <div class="gstars" style="margin-top:.6rem;" aria-label="5 stars">★★★★★</div>
+              <p>Carlos is very talented. He got his work done in no time at all. He was also Extremely pleasant,
+                 friendly and professional. I&#8217;d give him 6 stars if that was an option. &#129304;&#127995;</p>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
   </main>
+
+  <!-- ── INSTAGRAM BAR ── -->
+  <div class="insta-bar">
+    <a href="https://www.instagram.com/itdrestoration/" target="_blank" rel="noopener noreferrer" aria-label="Follow ITD Restoration on Instagram">
+      <i class="ph ph-instagram-logo" aria-hidden="true"></i>
+      Follow Us On Instagram
+    </a>
+  </div>
+
 
   <!-- ── FOOTER ── -->
   <footer class="footer" role="contentinfo">
@@ -773,7 +502,7 @@
         </div>
 
         <div class="footer__col">
-          <h5>Services</h5>
+          <h5>Our Services</h5>
           <ul class="footer__links" role="list">
             <li><a href="/pages/water-damage.html" class="footer__link">Water Damage</a></li>
             <li><a href="/pages/fire-restoration.html" class="footer__link">Fire Restoration</a></li>
@@ -787,7 +516,7 @@
         </div>
 
         <div class="footer__col">
-          <h5>Company</h5>
+          <h5>More Information</h5>
           <ul class="footer__links" role="list">
             <li><a href="/pages/about.html" class="footer__link">About ITD</a></li>
             <li><a href="/pages/prep.html" class="footer__link">P.R.E.P. Program</a></li>
@@ -799,7 +528,7 @@
         </div>
 
         <div class="footer__col">
-          <h5>Contact Us</h5>
+          <h5>24/7 Live Support</h5>
           <div class="footer__contact-item">
             <i class="ph ph-phone footer__contact-icon" aria-hidden="true"></i>
             <a href="tel:+18662199059" aria-label="Call ITD Restoration">(866) 219-9059</a>

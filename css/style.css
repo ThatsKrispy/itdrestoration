@@ -3,28 +3,30 @@
    ThatsKrispy Agency Build
    ============================================================ */
 
-/* ── Tokens ── */
+/* ── Tokens — matched 1:1 to itdrestoration.com Elementor kit ── */
 :root {
-  /* Brand colors */
-  --navy:      #0D1B2A;   /* Deep authority navy */
-  --slate:     #1E3A5F;   /* Mid navy */
-  --teal:      #0A7EA4;   /* Action teal */
-  --teal-lt:   #12A5D8;   /* Lighter teal for hover */
-  --gold:      #C5902F;   /* Trust gold accent */
-  --gold-lt:   #E5AE48;
+  /* Brand colors (live kit: primary/accent #009BCD, secondary #0C1015,
+     text #494B4F, tints #B7E0ED / #7CCFE9, muted #747C89) */
+  --navy:      #0C1015;   /* Live near-black */
+  --slate:     #161D26;   /* Slightly lifted black for gradients */
+  --teal:      #009BCD;   /* Live primary cyan */
+  --teal-lt:   #29B6E8;   /* Hover cyan */
+  --gold:      #009BCD;   /* Live has no gold — all accents cyan */
+  --gold-lt:   #29B6E8;
   --white:     #FFFFFF;
-  --off-white: #F5F7FA;
-  --mist:      #EBF1F8;   /* Subtle bg */
-  --charcoal:  #2C3E50;
-  --mid-gray:  #6B7C93;
-  --light-gray:#D8E1EB;
-  --text-dark: #12212F;
-  --text-mid:  #3D5166;
-  --text-light:#8398AD;
+  --off-white: #F2FAFD;
+  --mist:      #E3F3F9;   /* Soft section tint */
+  --tint:      #B7E0ED;   /* Live panel/card tint */
+  --charcoal:  #1A222C;
+  --mid-gray:  #747C89;
+  --light-gray:#CFE8F2;
+  --text-dark: #0C1015;
+  --text-mid:  #494B4F;
+  --text-light:#747C89;
 
-  /* Typography */
-  --font-display: 'Barlow Condensed', 'Oswald', sans-serif;
-  --font-body:    'Inter', 'Helvetica Neue', Arial, sans-serif;
+  /* Typography (live: Saira Condensed headings, Roboto body) */
+  --font-display: 'Saira Condensed', 'Barlow Condensed', sans-serif;
+  --font-body:    'Roboto', 'Helvetica Neue', Arial, sans-serif;
 
   /* Spacing */
   --gap-xs:  0.5rem;
@@ -40,10 +42,10 @@
   --radius-lg: 16px;
 
   /* Shadows */
-  --shadow-sm:  0 1px 3px rgba(13,27,42,.08), 0 1px 2px rgba(13,27,42,.06);
-  --shadow-md:  0 4px 16px rgba(13,27,42,.12);
-  --shadow-lg:  0 12px 40px rgba(13,27,42,.18);
-  --shadow-card:0 2px 8px rgba(13,27,42,.07), 0 8px 24px rgba(13,27,42,.06);
+  --shadow-sm:  0 1px 3px rgba(12,16,21,.08), 0 1px 2px rgba(12,16,21,.06);
+  --shadow-md:  0 4px 16px rgba(12,16,21,.12);
+  --shadow-lg:  0 12px 40px rgba(12,16,21,.18);
+  --shadow-card:0 2px 8px rgba(12,16,21,.07), 0 8px 24px rgba(12,16,21,.06);
 
   /* Transitions */
   --ease: cubic-bezier(.25,.46,.45,.94);
@@ -79,7 +81,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 input, textarea, select { font: inherit; }
 
 /* ── Typography ── */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+/* Fonts are loaded via <link> in each page head (Saira Condensed + Roboto) */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
@@ -103,10 +105,10 @@ p + p { margin-top: 1em; }
 .lead      { font-size: 1.125rem; line-height: 1.7; color: var(--text-mid); }
 
 .eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--teal);
   display: block;
@@ -187,12 +189,12 @@ p + p { margin-top: 1em; }
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.75rem;
-  border-radius: var(--radius-sm);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  padding: 0.65rem 1.9rem;
+  border-radius: 999px;   /* Live buttons are pills */
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   transition: var(--transition);
   white-space: nowrap;
@@ -227,11 +229,11 @@ p + p { margin-top: 1em; }
 .btn--outline {
   background: transparent;
   color: var(--white);
-  border-color: rgba(255,255,255,.5);
+  border-color: var(--teal);   /* Live: cyan-outlined pills */
 }
 .btn--outline:hover {
-  border-color: var(--white);
-  background: rgba(255,255,255,.1);
+  border-color: var(--teal-lt);
+  background: rgba(0,155,205,.15);
 }
 
 .btn--outline-dark {
@@ -262,7 +264,7 @@ p + p { margin-top: 1em; }
   right: 0;
   z-index: 1000;
   height: var(--nav-h);
-  background: rgba(13,27,42,.95);
+  background: rgba(12,16,21,.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,.07);
@@ -274,11 +276,22 @@ p + p { margin-top: 1em; }
   box-shadow: var(--shadow-md);
 }
 
+/* Live layout: links left · logo center · phone pill right */
 .nav__inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: "links logo cta";
   align-items: center;
-  justify-content: space-between;
   height: 100%;
+}
+.nav__logo  { grid-area: logo; justify-self: center; }
+.nav__links { grid-area: links; justify-self: start; }
+.nav__cta   { grid-area: cta; justify-self: end; }
+.nav__hamburger { grid-area: cta; justify-self: end; }
+
+@media (max-width: 768px) {
+  /* Mobile: logo left, hamburger right (links hidden) */
+  .nav__inner { display: flex; justify-content: space-between; }
 }
 
 .nav__logo {
@@ -542,8 +555,8 @@ p + p { margin-top: 1em; }
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(13,27,42,.92) 0%,
-    rgba(13,27,42,.7) 50%,
+    rgba(12,16,21,.92) 0%,
+    rgba(12,16,21,.7) 50%,
     rgba(10,126,164,.3) 100%
   );
 }
@@ -1736,3 +1749,333 @@ select.form-control {
 .service-card.reveal-init:nth-child(6) { transition-delay: 120ms; }
 .service-card.reveal-init:nth-child(7) { transition-delay: 180ms; }
 .service-card.reveal-init:nth-child(8) { transition-delay: 240ms; }
+
+/* ============================================================
+   LIVE-SITE 1:1 COMPONENTS (matched to itdrestoration.com)
+   ============================================================ */
+
+/* ── Hero (black, centered, live style) ── */
+.hero-live {
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: calc(var(--nav-h) + 5.5rem) 0 5rem;
+}
+.hero-live__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--teal);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+.hero-live__eyebrow::before,
+.hero-live__eyebrow::after {
+  content: '';
+  width: 34px;
+  height: 1px;
+  background: var(--teal);
+}
+.hero-live h1 {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  margin: 1.25rem auto 0;
+  max-width: 900px;
+}
+.hero-live h1 .swash {
+  position: relative;
+  display: inline-block;
+}
+.hero-live h1 .swash::after {
+  content: '';
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: -0.12em;
+  height: 0.14em;
+  background: var(--teal);
+  border-radius: 999px;
+  transform: skewX(-18deg);
+}
+.hero-live__sub {
+  color: rgba(255,255,255,.82);
+  max-width: 620px;
+  margin: 1.75rem auto 0;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+.hero-live__actions { margin-top: 2rem; }
+.hero-live__ticks {
+  margin: 2.75rem auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.hero-live__ticks span {
+  width: 4px;
+  height: 22px;
+  background: var(--teal);
+  transform: skewX(-18deg);
+}
+
+/* ── Service chip row ── */
+.chip-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.chip {
+  background: var(--white);
+  border: 1px solid var(--tint);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1rem 1.1rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.chip:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.chip__icon {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 0.7rem;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+.chip__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.1;
+}
+.chip__sub {
+  color: var(--teal);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── Tinted "With You" panel ── */
+.panel-tint {
+  background: var(--tint);
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.panel-tint__body { padding: 3rem 3.25rem; align-self: center; }
+.panel-tint__body h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+.panel-tint__body > p { margin-top: 0.9rem; color: var(--text-mid); font-size: 0.92rem; }
+.panel-bullet { display: flex; gap: 0.9rem; margin-top: 1.6rem; }
+.panel-bullet__icon { color: var(--teal); font-size: 1.5rem; flex: none; margin-top: 0.1rem; }
+.panel-bullet h4 { font-family: var(--font-display); font-weight: 700; font-size: 1.08rem; }
+.panel-bullet p { color: var(--text-mid); font-size: 0.85rem; margin-top: 0.2rem; }
+.panel-tint__media { position: relative; min-height: 420px; }
+.panel-tint__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.badge-years {
+  position: absolute;
+  left: -0px;
+  bottom: 2.25rem;
+  background: var(--navy);
+  color: var(--white);
+  padding: 0.9rem 1.4rem;
+  text-align: center;
+}
+.badge-years strong {
+  display: block;
+  color: var(--teal);
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.badge-years strong span { font-size: inherit; }
+.badge-years > span { font-size: 0.72rem; opacity: 0.9; }
+
+/* ── Photo band with white cards ── */
+.band-cards { position: relative; padding: 4.5rem 0; overflow: hidden; }
+.band-cards__bg { position: absolute; inset: 0; }
+.band-cards__bg img { width: 100%; height: 100%; object-fit: cover; }
+.band-cards__bg::after { content: ''; position: absolute; inset: 0; background: rgba(183,224,237,.55); }
+.band-cards .grid-3 { position: relative; z-index: 1; }
+.band-card {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  padding: 2.25rem 1.75rem;
+  text-align: center;
+}
+.band-card__icon {
+  width: 52px; height: 52px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+}
+.band-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; }
+.band-card p { color: var(--text-mid); font-size: 0.85rem; margin-top: 0.6rem; }
+
+/* ── Section eyebrow divider (live style) ── */
+.eyebrow-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+.eyebrow-rule::before, .eyebrow-rule::after {
+  content: '';
+  height: 1px;
+  width: min(160px, 18vw);
+  background: var(--light-gray);
+}
+
+/* ── Tinted service rows ── */
+.svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.svc-card {
+  background: var(--tint);
+  border-radius: 2px;
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  overflow: hidden;
+  min-height: 280px;
+}
+.svc-card__img { position: relative; }
+.svc-card__img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.svc-card__body { padding: 1.9rem 1.7rem; display: flex; flex-direction: column; align-items: flex-start; }
+.svc-card__icon {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+}
+.svc-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; }
+.svc-card p { color: var(--text-mid); font-size: 0.87rem; margin: 0.5rem 0 1.2rem; }
+.svc-card .btn { margin-top: auto; border: 2px solid var(--teal); color: var(--text-dark); background: var(--white); font-size: 0.88rem; padding: 0.5rem 1.4rem; }
+.svc-card .btn:hover { background: var(--teal); color: var(--white); }
+
+/* ── Licensed & Certified band ── */
+.band-cert { position: relative; padding: 3.5rem 0; overflow: hidden; color: var(--white); }
+.band-cert__bg { position: absolute; inset: 0; }
+.band-cert__bg img { width: 100%; height: 100%; object-fit: cover; }
+.band-cert__bg::after { content: ''; position: absolute; inset: 0; background: rgba(12,16,21,.72); }
+.band-cert__inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.band-cert h2 { color: var(--white); font-family: var(--font-display); font-weight: 700; font-size: clamp(1.7rem, 3vw, 2.3rem); }
+.band-cert__lic { font-family: var(--font-display); letter-spacing: 0.15em; font-size: 0.9rem; opacity: 0.85; text-transform: uppercase; margin-top: 0.3rem; }
+.band-cert__badges { display: flex; align-items: center; gap: 2.5rem; }
+.band-cert__badges img { height: 64px; width: auto; filter: grayscale(1) brightness(1.7); opacity: 0.9; }
+
+/* ── Google reviews strip ── */
+.greviews { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; align-items: start; }
+.greviews__summary { display: flex; flex-direction: column; gap: 0.4rem; }
+.greviews__summary img { width: 56px; height: auto; }
+.greviews__summary h3 { font-family: var(--font-body); font-weight: 700; font-size: 1rem; }
+.gstars { color: #FBBC04; font-size: 1.05rem; letter-spacing: 0.05em; }
+.greviews__count { color: var(--text-mid); font-size: 0.85rem; }
+.greviews__write {
+  margin-top: 0.6rem;
+  display: inline-block;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-decoration: none;
+  width: fit-content;
+}
+.greviews__write:hover { border-color: var(--teal); color: var(--teal); }
+.greviews__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.greview {
+  border: 1px solid #ECEFF3;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  background: var(--white);
+  padding: 1.25rem;
+  position: relative;
+}
+.greview__g { position: absolute; top: 1rem; right: 1rem; width: 20px; height: 20px; }
+.greview__head { display: flex; align-items: center; gap: 0.7rem; }
+.greview__avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  color: var(--white);
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  flex: none;
+}
+.greview__name { font-weight: 700; font-size: 0.92rem; }
+.greview__date { color: var(--text-light); font-size: 0.78rem; }
+.greview__verified { color: #1D9BF0; font-size: 0.95rem; }
+.greview p { color: var(--text-mid); font-size: 0.85rem; margin-top: 0.7rem; }
+
+/* ── Instagram bar ── */
+.insta-bar { background: var(--navy); border-bottom: 1px solid rgba(255,255,255,.08); }
+.insta-bar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: 1.4rem 1rem;
+}
+.insta-bar a:hover { color: var(--teal); }
+.insta-bar i { font-size: 1.4rem; }
+
+/* ── Live-components responsive ── */
+@media (max-width: 1024px) {
+  .chip-row { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) {
+  .panel-tint { grid-template-columns: 1fr; }
+  .panel-tint__media { min-height: 300px; }
+  .svc-grid { grid-template-columns: 1fr; }
+  .greviews { grid-template-columns: 1fr; }
+  .band-cert__inner { justify-content: center; text-align: center; }
+}
+@media (max-width: 640px) {
+  .chip-row { grid-template-columns: repeat(2, 1fr); }
+  .svc-card { grid-template-columns: 1fr; min-height: 0; }
+  .svc-card__img { height: 200px; position: relative; }
+  .greviews__cards { grid-template-columns: 1fr; }
+}
