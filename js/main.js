@@ -83,18 +83,19 @@
     btn.setAttribute('aria-expanded', 'false');
   });
 
-  /* ── Contact form (Web3Forms) ──
-     Get a free access key at https://web3forms.com — register it to
-     info@itdrestoration.com so submissions land in the client's inbox.
-     Until a real key is set, the form falls back to opening the visitor's
-     email app pre-filled (no fake "message sent" confirmations). */
-  const W3F_ACCESS_KEY = 'REPLACE_WITH_WEB3FORMS_KEY';
+  /* ── Contact form ──
+     Per client direction, the form opens the visitor's own email app with a
+     pre-filled message addressed to info@itdrestoration.com. No third-party
+     endpoint, no fake "message sent" confirmations.
 
+     TO SWITCH TO SERVER-SIDE DELIVERY LATER (e.g. Web3Forms): register a free
+     access key at https://web3forms.com tied to info@itdrestoration.com, then
+     restore the fetch() path from git history (see the block removed in this
+     commit) and set the form's action back to the API endpoint. */
   const contactForm = document.querySelector('#contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
+    contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const submitBtn = contactForm.querySelector('[type="submit"]');
       const successMsg = document.querySelector('#form-success');
       const errorMsg   = document.querySelector('#form-error');
       const mailtoMsg  = document.querySelector('#form-mailto');
@@ -115,42 +116,15 @@
 
       [successMsg, errorMsg, mailtoMsg].forEach(el => { if (el) el.style.display = 'none'; });
 
-      // No key configured yet → open the visitor's email app pre-filled instead
-      if (W3F_ACCESS_KEY.indexOf('REPLACE') === 0) {
-        const body = Object.entries(data)
-          .filter(([k, v]) => v && ['subject', 'from_name'].indexOf(k) === -1)
-          .map(([k, v]) => `${k.replace(/-/g, ' ')}: ${v}`)
-          .join('\n');
-        window.location.href = 'mailto:info@itdrestoration.com'
-          + '?subject=' + encodeURIComponent('Estimate request from ' + data['first-name'] + ' ' + data['last-name'])
-          + '&body=' + encodeURIComponent(body);
-        if (mailtoMsg) mailtoMsg.style.display = 'block';
-        return;
-      }
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending…';
-
-      try {
-        const res = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ access_key: W3F_ACCESS_KEY, ...data }),
-        });
-        const result = await res.json();
-
-        if (res.ok && result.success) {
-          contactForm.reset();
-          if (successMsg) { successMsg.style.display = 'block'; successMsg.scrollIntoView({ block: 'nearest' }); }
-        } else {
-          throw new Error(result.message || 'Server error');
-        }
-      } catch {
-        if (errorMsg) { errorMsg.style.display = 'block'; }
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
-      }
+      // Open the visitor's email app pre-filled with their message
+      const body = Object.entries(data)
+        .filter(([k, v]) => v && ['subject', 'from_name'].indexOf(k) === -1)
+        .map(([k, v]) => `${k.replace(/-/g, ' ')}: ${v}`)
+        .join('\n');
+      window.location.href = 'mailto:info@itdrestoration.com'
+        + '?subject=' + encodeURIComponent('Estimate request from ' + data['first-name'] + ' ' + data['last-name'])
+        + '&body=' + encodeURIComponent(body);
+      if (mailtoMsg) mailtoMsg.style.display = 'block';
     });
   }
 
